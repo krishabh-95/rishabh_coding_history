@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta charset="UTF-8">  
+<title>Vaccination Alerts</title>
+{% load static %}
+<script src="{% static '/js/indScript.js' %}" type="text/javascript"></script>
+</head>
+<body style="background-image:url({% static '/vaccine_stock_1.jpg' %});" onload="fetchInitialValues()">
+<h1 style="color:Red;text-align:center;">VACCINATION ALERTS CONFIGURATION</h1>
+<p style="margin-left:30%;"><b>Receive an email notification whenever vaccination slots open up for the age group 18-45.</b></p>
+<div style="border-radius:15px;background-color:#00FFF9;margin-left:25%;padding:15px;width:50%">
+<form action="/add_info" method="post" id="form_submit">
+	{% csrf_token %}
+	{% if initial_selection is not None %}
+		<p>Please select either of the following options:</p>
+		<input type="radio" id="state" name="selection_method" value="state" checked>
+		<label for="state">Search using the state and district names</label><br>
+		<input type="radio" id="pin" name="selection_method" value="pin">
+		<label for="pin">Search using the pincode</label><br><br>
+	{% endif %}
+	{% if states is not None or districts is not None or state_name is not None or district_name is not None %}
+		<select name="states" id="states" onclick="stateEntered()">
+		{% if state_name is not None %}
+			<option value="{{state_id}},{{state_name}}">{{state_name}}</option>
+		{% else %}	
+			<option value="no_state_selected">--Select the state--</option>
+		{% endif %}
+		{% for val in states %}
+			<option value="{{val.0}},{{val.1}}">{{val.1}}</option>
+		{% endfor %}
+		</select>
+		<br><br>
+		<select name="district" id="district" onclick="distEntered()">
+		{% if district_name is not None %}
+			<option value="{{district_id}},{{district_name}}">{{district_name}}</option>
+		{% else %}	
+			<option value="no_district_selected">--Select the district--</option>
+		{% endif %}
+		{% for val in districts %}
+			<option value="{{val.0}},{{val.1}}">{{val.1}}</option>
+		{% endfor %}
+		</select>
+		<br><br>
+	{% endif %}
+	{% if pincode is not None %}
+		{% ifequal pincode "yes" %}
+			<input type="number" id="pincode" name="pincode" min="1" max="999999" placeholder="Pincode">
+		{% else %}
+			<input type="number" id="pincode" name="pincode" min="1" max="999999" value="{{pincode}}">
+		{% endifequal %}
+		<br><br>
+	{% endif %}
+	{% if mail_id is not None %}
+		<input type="text" id="mail" name="mail" maxlength="150" placeholder="Mail ID" title="You will have to verify your email ID to start receiving notifications." required><br><br>
+		<input type="submit" value="Save" style="border:none;color:White;background-color:Blue;font-weight:bold;padding:5px 8px;" onclick="return isDataValid();">
+	{% else %}
+		<input type="submit" value="Continue" style="border:none;color:White;background-color:Blue;font-weight:bold;padding:5px 8px;" onclick="return isDataValid();">
+	{% endif %}
+</form>
+</div>
+{% if data_added is not None %}
+<div style="opacity:0.7;border-radius:5px;background-color:#90EE90;margin-left:20%;margin-top:35%;" id="pop_up">
+		<button style="border:none;border-radius:3px;font-size:8px;margin-left:97%;margin-top:1%;background-color:Red;" onclick="closePopUp()" type="button"><b>X</b></button>
+		Your mail ID has been verified successfully. You will now start receiving notifications as slots open up.	
+</div>
+{% endif %}
+{% if mail_sending_failed is not None %}
+<div style="opacity:0.7;border-radius:5px;background-color:Red;margin-left:20%;margin-top:35%;" id="pop_up_2">
+		<button style="border:none;border-radius:3px;font-size:8px;margin-left:97%;margin-top:1%;background-color:Green;" onclick="closePopUp()" type="button"><b>X</b></button>
+		Error occurred while sending the mail notification. Please make sure that you have entered the correct mail ID. If the mail ID is correct, please try again after sometime.	
+</div>
+{% endif %}
+{% if verification_failed is not None %}
+<div style="opacity:0.7;border-radius:5px;background-color:Red;margin-left:20%;margin-top:35%;" id="pop_up_3">
+		<button style="border:none;border-radius:3px;font-size:8px;margin-left:97%;margin-top:1%;background-color:Green;" onclick="closePopUp()" type="button"><b>X</b></button>
+		The OTP that you entered was incorrect. Please try again.	
+</div>
+{% endif %}
+</body>
+</html>
+

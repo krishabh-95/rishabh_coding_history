@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Vaccination Alerts</title>
+{% load static %}
+<script src="{% static '/js/resultScript.js' %}" type="text/javascript"></script>
+</head>
+<body style="background-image:url({% static '/vaccine_stock_1.jpg' %});">
+<h1 style="color:Red;text-align:center;">VACCINATION ALERTS CONFIGURATION</h1>
+<p style="margin-left:30%;"><b>Receive an email notification whenever vaccination slots open up for the age group 18-45.</b></p>
+<div style="border-radius:15px;background-color:#00FFF9;margin-left:20%;padding:15px">
+<form action="/add_info" method="post">
+{% csrf_token %}
+<input type="text" id="district_id" name="district_id" value="{{district_id}}" style="display:None;">
+<input type="text" id="pincode" name="pincode" value="{{pincode}}" style="display:None;">
+<input type="text" id="mail" name="mail" value="{{mail}}" style="display:None;">
+<input type="number" id="otp" name="otp" min="10000" max="99999" style="width:30%;" placeholder="Please enter the OTP that has been sent to your mail ID." title="Please enter the OTP that has been sent to your mail ID."><br><br>
+<input type="submit" value="Confirm" style="color:White;background-color:Blue;font-weight:bold;" onclick="return isDataValid();">&nbsp;
+</form>
+<form action="/go_back" method="post">
+{% csrf_token %}
+<input type="submit" value="Go Back" style="color:White;background-color:Red;font-weight:bold;" onclick="return isDataValid();">
+</form>
+</div>
+</body>
+</html>
