@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1007637419923",
+    "project_id": "busscheduleproject-e5a5f",
+    "storage_bucket": "busscheduleproject-e5a5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007637419923:android:cccc6b0c9a48f2e218fa66",
+        "android_client_info": {
+          "package_name": "com.example.firebasetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007637419923-fu2u4vr9gq5074ll2317jt5ehpdcv0e3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8bSd5MTZ-nWX1SwavamY4EYwFR6eIqa8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007637419923-fu2u4vr9gq5074ll2317jt5ehpdcv0e3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007637419923:android:600bb96396eefa6418fa66",
+        "android_client_info": {
+          "package_name": "com.example.tansit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007637419923-fu2u4vr9gq5074ll2317jt5ehpdcv0e3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8bSd5MTZ-nWX1SwavamY4EYwFR6eIqa8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007637419923-fu2u4vr9gq5074ll2317jt5ehpdcv0e3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

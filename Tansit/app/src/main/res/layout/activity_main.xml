@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonBarChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Average bus availability per day"/>
+
+    <Button
+        android:id="@+id/buttonPieChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time taken by each bus in past journey"/>
+
+  </LinearLayout>
