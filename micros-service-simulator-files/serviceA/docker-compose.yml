@@ -1,0 +1,31 @@
+version : '3'
+networks:
+  default:
+    external:
+      name: my-dapr-network
+services:
+  ############################
+  # serviceone app + Dapr sidecar
+  ############################
+  serviceoneapp:
+    image: serviceoneapp
+    build:
+      context: .
+      dockerfile: .
+    ports:
+      - "3501:3501" # HOST_PORT:CONTAINER_PORT
+
+  serviceoneapp-dapr:
+    image: "daprio/daprd:edge"
+    command: ["./daprd",
+              "-app-id", "serviceoneapp",
+              "--dapr-http-port", "3501",
+              "-app-port", "8090", # Same as Expose port of Dockerfile of the respective service
+              "-components-path", "/components",
+              "-log-level", "debug"]
+    volumes:
+      - "./components/:/components"
+
+    depends_on:
+      - serviceoneapp
+    network_mode: "service:serviceoneapp"

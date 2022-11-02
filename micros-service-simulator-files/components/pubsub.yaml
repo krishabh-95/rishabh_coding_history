@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: simulatorpubsub
+spec:
+  type: pubsub.redis
+  version: v1
+  metadata:
+  - name: redisHost
+    value: localhost:6379
+  - name: redisPassword
+    value: ""
+#The following services are eligible to publish the topics defined in this pubsub broker
+scopes:
+   - service-a
+   - service-b
+   - service-c

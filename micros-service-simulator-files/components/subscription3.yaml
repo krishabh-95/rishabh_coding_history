@@ -1,0 +1,12 @@
+apiVersion: dapr.io/v1alpha1
+kind: Subscription
+metadata:
+  name: dependent_subscription2
+spec:
+  topic: topic3   
+  route: /topic3
+  pubsubname: simulatorpubsub
+#These services subscribe to the topic "topic3"
+scopes:
+  - service-b
+  - service-c
