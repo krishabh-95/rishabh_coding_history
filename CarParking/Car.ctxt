@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Car
+comment0.text=\r\n\ @author\ Rishabh\ K\ Iyer\ (ID\:\ 103170582)\r\n\ @version\ JDK\ 11.0.12\r\n\ @date\ 15\ October\ 2021\r\n\ This\ class\ represents\ the\ entity\ "Car"\r\n
+comment1.params=registrationNo\ ownerName\ isStaffMember\ phoneNumber
+comment1.target=Car(java.lang.String,\ java.lang.String,\ boolean,\ long)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ the\ class\ Car\r\n\ @param\ registrationNo\:\ The\ registration\ number\ of\ the\ car\r\n\ @param\ ownerName\:\ The\ name\ of\ its\ owner\r\n\ @param\ phoneNumber\:\ The\ owner's\ phone\ number\r\n\ @param\ isStaffMember\:\ Whether\ the\ owner\ is\ a\ staff\ member\r\n
+comment2.params=
+comment2.target=boolean\ isOwnerStaffMember()
+comment2.text=\r\n\ @return\ This\ method\ returns\ a\ boolean\ stating\ if\ the\ owner\ is\ a\ staff\ member\ or\ not\r\n
+comment3.params=
+comment3.target=java.lang.String\ getRegistrationNo()
+comment3.text=\r\n\ @return\ The\ registration\ number\ of\ the\ car\r\n
+comment4.params=
+comment4.target=java.lang.String\ getOwnerName()
+comment4.text=\r\n\ @return\ The\ car\ owner's\ name\r\n
+comment5.params=
+comment5.target=long\ getOwnerPhoneNo()
+comment5.text=\r\n\ @return\ The\ owner's\ phone\ number\r\n
+numComments=6

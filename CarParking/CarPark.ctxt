@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=CarPark
+comment0.text=\r\n\ @author\ Rishabh\ K\ Iyer\ (ID\:\ 103170582)\r\n\ @version\ JDK\ 11.0.12\r\n\ @date\ 15\ October\ 2021\r\n\ This\ class\ maintains\ a\ list\ of\ all\ the\ available\ parking\ slots.\r\n
+comment1.params=slot
+comment1.target=boolean\ addSlot(ParkingSlot)
+comment1.text=\r\n\ This\ method\ is\ used\ to\ add\ a\ slot\ to\ the\ list\ of\ parking\ slots\r\n\ @param\ slot\:\ The\ parking\ slot\ object\ that\ needs\ to\ be\ added\r\n
+comment2.params=slot
+comment2.target=boolean\ deleteSlot(ParkingSlot)
+comment2.text=\r\n\ This\ method\ is\ used\ to\ delete\ a\ slot\r\n\ @param\ slot\:\ The\ parking\ slot\ that\ needs\ to\ be\ deleted\r\n
+comment3.params=slotId
+comment3.target=ParkingSlot\ getSlot(java.lang.String)
+comment3.text=\r\n\ @return\ This\ method\ returns\ the\ parking\ slot\ having\ the\ slot\ ID\ passed\ as\ an\ argument\r\n\ @param\ slotId\:\ The\ slot\ ID\ of\ the\ slot\ that\ we\ intend\ to\ fetch\r\n
+comment4.params=
+comment4.target=void\ getParkingSlots()
+comment4.text=\r\n\ This\ method\ prints\ all\ the\ slots\ available\ in\ the\ parking\ lot\r\n
+comment5.params=
+comment5.target=java.util.ArrayList\ getParkingSlotsList()
+comment5.text=\r\n\ @return\ The\ entire\ list\ of\ parking\ slots\r\n
+comment6.params=regNo
+comment6.target=ParkingSlot\ getSlotFromRegistrationNo(java.lang.String)
+comment6.text=\r\n\ @param\ regNo\:\ The\ registration\ number\ of\ the\ car\ that\ the\ user\ wants\ to\ find\r\n\ @return\ The\ parking\ slot\ in\ which\ this\ car\ is\ present\r\n
+numComments=7
