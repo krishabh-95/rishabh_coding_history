@@ -791,4 +791,4 @@ if __name__=='__main__':
         isFilePresent=True 
         
     checkAndCreateDB()
-    client.run("ODE5NzcwOTAzNTY2MDkwMjYw.YErdJg.Kxve68NQxRI7awN1bh8sQZxgXsg")
+    client.run("BOT_TOKEN")
